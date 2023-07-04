@@ -11,7 +11,7 @@ public class Airplane extends Vehicle{
     private int numberOfPassenger;
 
     public Airplane(String manufacturer, String model, int year, int numberOfPassenger) {
-        super.getManufacturer(manufacturer);
+        super(manufacturer, model, year);
         this.numberOfPassenger = numberOfPassenger;
     }
 }
