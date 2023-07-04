@@ -3,6 +3,7 @@ package com.ironhack.hellomotor.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ public class Car extends Vehicle{
     private int numberOfDoors;
     @Enumerated(EnumType.STRING)
     private CarType type;
+
 
     public Car(String manufacturer, String model, int year, int numberOfDoors, CarType type) {
         super(manufacturer, model, year);
