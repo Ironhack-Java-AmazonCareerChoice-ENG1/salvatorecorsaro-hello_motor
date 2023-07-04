@@ -5,15 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Entity
+@Entity
 @Data
-//@NoArgsConstructor
-//@Inheritance(strategy = InheritanceType.JOINED)
-//@DiscriminatorColumn(name = "vehicle_type")
-//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@MappedSuperclass
 @NoArgsConstructor
-public abstract class Vehicle {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "vehicle_type")
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@MappedSuperclass
+public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,5 +26,15 @@ public abstract class Vehicle {
         this.manufacturer = manufacturer;
         this.model = model;
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                '}';
     }
 }
